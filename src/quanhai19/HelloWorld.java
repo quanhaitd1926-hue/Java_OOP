@@ -7,5 +7,7 @@ public class HelloWorld {
 		Scanner scanner = new Scanner(System.in);
 		int n = scanner.nextInt();
 		System.out.println(n);
+		System.out.println("Hello World !");
+		System.out.println("28tech C++ programming !");
 	}
 }
