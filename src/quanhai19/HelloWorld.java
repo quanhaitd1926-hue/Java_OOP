@@ -6,8 +6,14 @@ public class HelloWorld {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int n = scanner.nextInt();
-		System.out.println(n);
-		System.out.println("Hello World !");
-		System.out.println("28tech C++ programming !");
+		Integer[] a = new Integer[n];
+		for (int i = 0; i < n; i++) {
+			a[i] = scanner.nextInt();
+		}
+
+		for (int i = 0; i < n; i++) {
+			System.out.print(a[i] + " ");
+		}
+
 	}
 }
