@@ -1,8 +1,8 @@
-package quanhai19;
+package ArraysJava;
 
 import java.util.Scanner;
 
-public class HelloWorld {
+public class Min_Value {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int n = scanner.nextInt();
@@ -10,17 +10,14 @@ public class HelloWorld {
 		for (int i = 0; i < n; i++) {
 			a[i] = scanner.nextInt();
 		}
-		int[] cnt = new int[10000001];
-		int max_value = -1;
+		int min_value = 100001, cnt = 0;
 		for (int i = 0; i < n; i++) {
-			cnt[a[i]]++;
-			max_value = Math.max(max_value, a[i]);
+			min_value = Math.min(min_value, a[i]);
 		}
-		for (int i = 0; i <= max_value; i++) {
-			if (cnt[i] != 0) {
-				System.out.println(i + " " + cnt[i]);
-			}
+		for (int i = 0; i < n; i++) {
+			if (a[i] == min_value)
+				++cnt;
 		}
-
+		System.out.println(cnt);
 	}
 }

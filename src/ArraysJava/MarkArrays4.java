@@ -1,8 +1,8 @@
-package quanhai19;
+package ArraysJava;
 
 import java.util.Scanner;
 
-public class HelloWorld {
+public class MarkArrays4 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int n = scanner.nextInt();
@@ -16,11 +16,17 @@ public class HelloWorld {
 			cnt[a[i]]++;
 			max_value = Math.max(max_value, a[i]);
 		}
-		for (int i = 0; i <= max_value; i++) {
-			if (cnt[i] != 0) {
-				System.out.println(i + " " + cnt[i]);
+		int max_frequency = -1;
+		for (int i = 0; i < n; i++) {
+			if (cnt[a[i]] != 0) {
+				max_frequency = Math.max(max_frequency, cnt[a[i]]);
 			}
 		}
-
+		for (int i = 0; i <= max_value; i++) {
+			if (cnt[i] != 0 && cnt[i] == max_frequency) {
+				System.out.println(i + " " + cnt[i]);
+				break;
+			}
+		}
 	}
 }

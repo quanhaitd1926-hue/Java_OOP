@@ -1,8 +1,8 @@
-package quanhai19;
+package ArraysJava;
 
 import java.util.Scanner;
 
-public class HelloWorld {
+public class MarkArrays2 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int n = scanner.nextInt();
@@ -21,6 +21,5 @@ public class HelloWorld {
 				System.out.println(i + " " + cnt[i]);
 			}
 		}
-
 	}
 }
