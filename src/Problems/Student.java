@@ -1,61 +1,21 @@
 package Problems;
 
-public class Student {
-	private String id, name, className, email;
+public class Student extends Person {
+	private String className;
+	private double gpa;
 
-	public Student(String id, String name, String className, String email) {
-		this.id = id;
-		this.name = name;
+	public Student(String name, String birth) {
+		super(name, birth);
+	}
+
+	public Student(String name, String birth, String className, double gpa) {
+		super(name, birth);
 		this.className = className;
-		this.email = email;
+		this.gpa = gpa;
 	}
 
-	public String chuanHoaName(String s) {
-		String[] arr = s.split("\\s+");
-		String name = "";
-		for (int i = 0; i < arr.length; i++) {
-			name += Character.toUpperCase(arr[i].charAt(0));
-			for (int j = 1; j < arr[i].length(); j++) {
-				name += Character.toLowerCase(arr[i].charAt(j));
-			}
-			name += " ";
-		}
-		return name.trim();
+	public void xinchao() {
+		System.out.println("Hello World!");
 	}
 
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getClassName() {
-		return className;
-	}
-
-	public void setClassName(String className) {
-		this.className = className;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String toString() {
-		return this.id + " " + chuanHoaName(this.name) + " " + this.className + " " + this.email;
-	}
 }
