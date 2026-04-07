@@ -1,24 +1,23 @@
 package quanhai19;
 
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class HelloWorld {
-
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		int t = scanner.nextInt();
-		scanner.nextLine();
-		for (int i = 0; i < t; i++) {
-			String s = scanner.nextLine();
-			Pattern pattern = Pattern.compile("0\\d{9,10}");
-			Matcher matcher = pattern.matcher(s);
-			if (matcher.matches())
-				System.out.println("YES");
-			else
-				System.out.println("NO");
+		Scanner sc = new Scanner(System.in);
+		String[] name = new String[10];
+		double[] score = new double[10];
+		for (int i = 0; i < 3; i++) {
+			System.out.printf("Nhap ten hoc sinh %d: ", i + 1);
+			name[i] = sc.nextLine();
+			System.out.print("Nhap diem: ");
+			score[i] = sc.nextDouble();
+			sc.nextLine();
 		}
-
+		System.out.println("Danh sach hoc sinh:");
+		for (int i = 0; i < 3; i++) {
+			System.out.print(name[i] + "-" + score[i]);
+			System.out.println();
+		}
 	}
 }
