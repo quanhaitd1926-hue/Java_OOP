@@ -4,23 +4,23 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		while (true) {
-			System.out.println("Nhap n = ");
-			try {
-				int n = scanner.nextInt();
-				try {
-					System.out.println("ans 10 / n = " + 10 / n);
-					break;
-				} catch (Exception e) {
-					// TODO: handle exception
-					System.out.println("run error");
-				}
-			} catch (Exception e) {
-				// TODO: handle exception
-				scanner.next();
-				System.out.println("run error");
-			}
+		try (Scanner sc = new Scanner(System.in)) {
+			System.out.print("username: ");
+			String username = sc.nextLine();
+			System.out.print("password: ");
+			String password = sc.nextLine();
+			System.out.print("So du: ");
+			double balance = sc.nextDouble();
+			System.out.print("can rut: ");
+			double amount = sc.nextDouble();
+
+			BankAccount acc = new BankAccount(username, password, balance);
+			acc.withdraw(amount);
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			System.out.println("end game");
 		}
 	}
 }

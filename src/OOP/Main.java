@@ -1,10 +1,21 @@
 package OOP;
 
+import java.util.Scanner;
+
 public class Main {
 	public static void main(String[] args) {
-		SinhVien it1 = new SinhVienIT(10, 9);
-		System.out.println("sinh vien it score = " + it1.getDiem());
-		SinhVien ck1 = new SinhVienCoKhi(10, 9);
-		System.out.println("sinh vien ck score = " + ck1.getDiem());
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Nhap ma sinh vien: ");
+		String id = sc.nextLine();
+		System.out.print("Nhap chuyen nganh: ");
+		String major = sc.nextLine();
+		System.out.print("Nhap ten: ");
+		String name = sc.nextLine();
+		System.out.print("Nhap dia chi: ");
+		String address = sc.nextLine();
+		System.out.print("Nhap tuoi: ");
+		int age = sc.nextInt();
+		Student st = new Student(id, major, name, address, age);
+		System.out.println(st);
 	}
 }
